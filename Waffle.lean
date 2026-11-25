@@ -21,6 +21,27 @@ theorem finite_cone (a b u v : K)
     (a^2+b^2)*u = 2*a*b*(1+v) := by
   linear_combination b * hx + a * hy
 
+/-- Solve both affine intersection equations without metric facts. -/
+theorem intersection_scales (a b u v : K)
+    (hx : u*b - v*a = 2*a)
+    (hy : u*a = v*b) :
+    (b^2-a^2)*u = 2*a*b ∧ (b^2-a^2)*v = 2*a^2 := by
+  constructor
+  · linear_combination b * hx - a * hy
+  · linear_combination a * hx - b * hy
+
+/-- Closed forms for the scales when the two rays have a unique intersection. -/
+theorem closed_scales (a b u v : K)
+    (hx : u*b - v*a = 2*a) (hy : u*a = v*b)
+    (hd : b^2-a^2 ≠ 0) :
+    u = 2*a*b/(b^2-a^2) ∧ v = 2*a^2/(b^2-a^2) := by
+  obtain ⟨hu, hv⟩ := intersection_scales a b u v hx hy
+  constructor
+  · apply (eq_div_iff hd).2
+    simpa [mul_comm] using hu
+  · apply (eq_div_iff hd).2
+    simpa [mul_comm] using hv
+
 /-- The finite algebraic core is independent of limits and order.
     hsine is the reflected-triangle sine relation; hcone is the
     transfer of that same sine to the right cone. -/
@@ -79,9 +100,44 @@ theorem equal_legs (a c s : K)
   rw [hs, one_mul] at h
   linear_combination -h
 
+/-- The intersection equations imply the two geometric-series fixed points,
+    once b is nonzero. This links the finite and infinite constructions. -/
+theorem intersection_fixed_points (a b u v : K) (hb : b ≠ 0)
+    (hx : u*b - v*a = 2*a) (hy : u*a = v*b) :
+    u = 2*a/b + (a/b)^2*u ∧
+    v = 2*(a/b)^2 + (a/b)^2*v := by
+  obtain ⟨hu, hv⟩ := intersection_scales a b u v hx hy
+  constructor
+  · field_simp [hb]
+    linear_combination hu
+  · field_simp [hb]
+    linear_combination hv
+
 end Field
 
+/-- Rational countermodels: either sine relation alone is insufficient.
+    These are algebraic countermodels, not Euclidean triangles. -/
+theorem missing_reflection_countermodel :
+    ∃ a b c u v s : ℚ,
+      0 < a ∧ a < b ∧ 0 < c ∧ 0 < s ∧
+      u*b-v*a = 2*a ∧ u*a = v*b ∧
+      s*(1+v) = u ∧ a^2+b^2 ≠ c^2 := by
+  refine ⟨3,4,6,24/7,18/7,24/25, ?_⟩
+  norm_num
+
+theorem missing_transfer_countermodel :
+    ∃ a b c u v s : ℚ,
+      0 < a ∧ a < b ∧ 0 < c ∧ 0 < s ∧
+      u*b-v*a = 2*a ∧ u*a = v*b ∧
+      s*c^2 = 2*a*b ∧ a^2+b^2 ≠ c^2 := by
+  refine ⟨3,4,6,24/7,18/7,2/3, ?_⟩
+  norm_num
+
 #print axioms finite_cone
+#print axioms closed_scales
+#print axioms intersection_fixed_points
+#print axioms missing_reflection_countermodel
+#print axioms missing_transfer_countermodel
 #print axioms finite_pythagoras
 #print axioms fixed_point_unique
 #print axioms truncation_defect
