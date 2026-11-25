@@ -25,6 +25,8 @@ The normalized ratio defect has numerator u rⁿ. These certificates apply for e
 
 - [Area-free similarity bridge](SIMILARITY.md): the finite cone follows from local AA right-triangle similarity and elementary length rules, without an area function. All five audited statements pass locally, including a taxicab counterexample. Synthetic derivation of AA remains open.
 
+- [Length characterization](CHARACTERIZATION.md): the quadratic law, local AA, and one normalized projection family are equivalent; six additional statements are locally verified.
+
 ## Build
 
 ```sh

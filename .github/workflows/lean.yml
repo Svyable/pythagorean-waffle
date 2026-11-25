@@ -23,4 +23,5 @@ jobs:
           lake env lean Waffle.lean | tee axiom-audit.txt
           lake env lean Waffle/Geometry.lean | tee -a axiom-audit.txt
           lake env lean Waffle/Similarity.lean | tee -a axiom-audit.txt
+          lake env lean Waffle/Characterization.lean | tee -a axiom-audit.txt
           ! grep -E 'sorryAx|declaration uses .sorry.' axiom-audit.txt
