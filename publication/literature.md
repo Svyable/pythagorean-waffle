@@ -9,3 +9,5 @@
 - Song et al., PaperOrchestra (2026), https://arxiv.org/abs/2604.05018 — writing workflow, not evidence for mathematical novelty.
 
 Open: compare exact statements, not titles; establish whether normalized projection and quantitative bounds are already known. Do not claim novelty until that review is complete.
+
+- Cai et al., Cogentic: Multi-Agent Orchestration for Automated Proof Discovery (2026), https://arxiv.org/html/2609.40324v2 — research-round and verified-ledger design; not evidence for mathematical novelty.

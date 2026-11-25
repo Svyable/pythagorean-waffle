@@ -36,6 +36,9 @@ The normalized ratio defect has numerator u rⁿ. These certificates apply for e
 - Finite sampling: under the triangle inequality and mesh coverage, finite absolute squared-length error gives global relative error at most ε+6δ. See Waffle/Sampling.lean.
 - Infinite chain: initial vertices, affine right-angle steps, boundary lengths, convergence to the apex, and equality of infinite sums with finite boundary lengths verified in Waffle/Chain.lean.
 
+- Sharp sampling refinement: the universal absolute squared-length slope error is 2-Lipschitz (optimal by taxicab length), yielding a global relative mesh bound ε+2δ; exact rational samples suffice under triangle inequality. See Waffle/Refinement.lean.
+- [Cogentic-inspired research rounds](research/README.md) and [attempt record](research/rounds.md).
+
 ## Build
 
 ```sh

@@ -103,5 +103,33 @@
     "module": "Waffle/Chain.lean",
     "theorem": "Waffle.Chain.sums_equal_apex_lengths",
     "scope": "BasicLength; positive ordered legs; no AA or area premise."
+  },
+  {
+    "id": "C16",
+    "title": "Improved global finite-sample stability",
+    "module": "Waffle/Refinement.lean",
+    "theorem": "Waffle.Refinement.finite_sample_global_two",
+    "scope": "BasicLength plus triangle inequality; nonnegative tolerance and mesh; finite covering of [0,1]; absolute squared-length sample error. Bound \u03b5+2\u03b4."
+  },
+  {
+    "id": "C17",
+    "title": "Optimal absolute-error slope Lipschitz constant",
+    "module": "Waffle/Refinement.lean",
+    "theorem": "Waffle.Refinement.lipschitz_two_sharp",
+    "scope": "Sharpness for the universal absolute-error Lipschitz bound on [0,1], not a claim of optimal global mesh error."
+  },
+  {
+    "id": "C18",
+    "title": "Recovery from dense rational slopes",
+    "module": "Waffle/Refinement.lean",
+    "theorem": "Waffle.Refinement.rational_slopes",
+    "scope": "BasicLength plus triangle inequality; exact squared-length agreement on every positive rational slope at most one."
+  },
+  {
+    "id": "C19",
+    "title": "Two-Lipschitz absolute squared-length error",
+    "module": "Waffle/Refinement.lean",
+    "theorem": "Waffle.Refinement.error_lipschitz_two",
+    "scope": "BasicLength plus triangle inequality; slopes in [0,1]."
   }
 ]

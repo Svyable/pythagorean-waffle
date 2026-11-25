@@ -33,6 +33,18 @@ for c in claims:
 a.out.mkdir(parents=True, exist_ok=True)
 template=(root/"publication/whitepaper.html").read_text()
 a.out.joinpath("index.html").write_text(template.replace("@@CLAIMS@@","".join(rows)).replace("@@COMMIT@@",a.commit).replace("@@COUNT@@",str(len(claims))))
+# Cogentic-inspired persistent ledger, generated only from a clean audit.
+ledger = {}
+for name, ax in re.findall(r"'([^']+)' depends on axioms: \[(.*?)\]", audit):
+    axioms = sorted(x.strip() for x in ax.split(",") if x.strip())
+    if not set(axioms) <= allowed:
+        raise SystemExit("Unexpected axiom in ledger: "+name)
+    if name in ledger and ledger[name]["axioms"] != axioms:
+        raise SystemExit("Conflicting audit entries: "+name)
+    ledger[name] = {"theorem": name, "axioms": axioms, "source_commit": a.commit}
+if not ledger:
+    raise SystemExit("Empty proof ledger")
+a.out.joinpath("proof-ledger.json").write_text(json.dumps(list(ledger.values()),indent=2)+"\n")
 a.out.joinpath("claims.json").write_text(json.dumps(claims,indent=2)+"\n")
 shutil.copyfile(a.audit,a.out/"axiom-audit.txt")
 raw=a.out/"raw_materials"
