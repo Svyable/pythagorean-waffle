@@ -1,0 +1,14 @@
+Lean (version 4.19.0, arm64-apple-darwin23.6.0, commit 6caaee842e94, Release)
+Waffle/Geometry.lean:136:58: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Waffle/Geometry.lean:140:24: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Waffle/Geometry.lean:173:53: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'Waffle.Geometry.apex_geometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Geometry.foot_geometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Geometry.hypotenuse_geometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Geometry.cone_angle_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Geometry.reflected_area' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Geometry.reflected_sine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Geometry.pythagoras' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -8,7 +8,7 @@ Research into machine-checked trigonometric proofs of the Pythagorean theorem, i
 
 - `Waffle.lean`: finite affine intersection certificate, conditional Pythagorean derivation, fixed-point uniqueness and exact finite truncation error over arbitrary fields. Geometry assumptions are explicit.
 - `archive/JacksonJohnson.lean`: original 460-line prototype, preserved as an **unverified archive**, not part of the default build. Its global similarity axiom itself implies Pythagoras; do not use it to certify foundational independence.
-- Synthetic derivation of the sine transfer, reflected-triangle sine law, and angle/length semantics remains open.
+- [Geometry bridge](GEOMETRY.md): both sine equations and all positive-leg cases now follow from an explicit abstract length/area interface. The affine cone and altitude foot, quarter-turn perpendicularity, and angle transfer are locally kernel-checked. Derivation of the interface from elementary synthetic axioms remains open.
 
 ## Mathematical core
 
