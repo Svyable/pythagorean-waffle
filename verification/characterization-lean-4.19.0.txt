@@ -1,0 +1,23 @@
+Lean (version 4.19.0, arm64-apple-darwin23.6.0, commit 6caaee842e94, Release)
+Waffle/Characterization.lean:71:4: warning: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+Waffle/Characterization.lean:75:4: warning: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+Waffle/Characterization.lean:152:68: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Waffle/Characterization.lean:164:64: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Waffle/Characterization.lean:185:4: warning: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+Waffle/Characterization.lean:189:4: warning: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+Waffle/Characterization.lean:199:27: warning: 'ring' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+Waffle/Characterization.lean:199:27: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+'Waffle.Characterization.normalized_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Characterization.normalized_iff_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Characterization.normalized_iff_localAA' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Characterization.quadratic_of_localAA' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Characterization.localAA_of_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Characterization.localAA_iff_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
