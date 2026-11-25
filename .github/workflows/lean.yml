@@ -1,0 +1,15 @@
+name: Lean verification
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+      - name: Audit exported theorem axioms
+        run: |
+          set -o pipefail
+          lake env lean Waffle.lean | tee axiom-audit.txt
+          ! grep -E 'sorryAx|declaration uses .sorry.' axiom-audit.txt
