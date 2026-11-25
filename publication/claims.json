@@ -1,0 +1,72 @@
+[
+  {
+    "id": "C01",
+    "title": "Finite cone certificate",
+    "module": "Waffle.lean",
+    "theorem": "Waffle.finite_cone",
+    "scope": "Algebra over a field, given two affine intersection equations."
+  },
+  {
+    "id": "C02",
+    "title": "Conditional Pythagorean deduction",
+    "module": "Waffle.lean",
+    "theorem": "Waffle.finite_pythagoras",
+    "scope": "Requires both sine relations and nonzero product."
+  },
+  {
+    "id": "C03",
+    "title": "Exact truncation defect",
+    "module": "Waffle.lean",
+    "theorem": "Waffle.truncation_defect",
+    "scope": "Algebraic truncation; full geometric realization of original sequence remains open."
+  },
+  {
+    "id": "C04",
+    "title": "Area-based bridge",
+    "module": "Waffle/Geometry.lean",
+    "theorem": "Waffle.Geometry.pythagoras",
+    "scope": "Abstract AreaPlane; base-height area principle is assumed."
+  },
+  {
+    "id": "C05",
+    "title": "Area-free bridge",
+    "module": "Waffle/Similarity.lean",
+    "theorem": "Waffle.Similarity.pythagoras",
+    "scope": "Abstract LengthPlane; local AA rule is assumed."
+  },
+  {
+    "id": "C06",
+    "title": "Euclidean length characterization",
+    "module": "Waffle/Characterization.lean",
+    "theorem": "Waffle.Characterization.localAA_iff_quadratic",
+    "scope": "BasicLength assumptions; coordinate quarter-turn perpendicularity."
+  },
+  {
+    "id": "C07",
+    "title": "Normalized projection criterion",
+    "module": "Waffle/Characterization.lean",
+    "theorem": "Waffle.Characterization.normalized_iff_quadratic",
+    "scope": "BasicLength; positive-slope test equivalent to quadratic length law."
+  },
+  {
+    "id": "C08",
+    "title": "Exact projection defect",
+    "module": "Waffle/Stability.lean",
+    "theorem": "Waffle.Stability.defect_identity",
+    "scope": "BasicLength. Positive slope; no AA assumption."
+  },
+  {
+    "id": "C09",
+    "title": "Relative-error equivalence",
+    "module": "Waffle/Stability.lean",
+    "theorem": "Waffle.Stability.relative_bound_iff",
+    "scope": "BasicLength. Positive slope; squared length."
+  },
+  {
+    "id": "C10",
+    "title": "Global stability",
+    "module": "Waffle/Stability.lean",
+    "theorem": "Waffle.Stability.global_relative_bound",
+    "scope": "BasicLength. Nonnegative tolerance; uniform hypothesis at every positive slope."
+  }
+]

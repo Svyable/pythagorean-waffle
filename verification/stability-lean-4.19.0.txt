@@ -1,0 +1,16 @@
+Lean (version 4.19.0, arm64-apple-darwin23.6.0, commit 6caaee842e94, Release)
+Waffle/Stability.lean:22:64: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Waffle/Stability.lean:26:22: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Waffle/Stability.lean:43:33: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Waffle/Stability.lean:49:40: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Waffle/Stability.lean:83:29: warning: 'ring' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+Waffle/Stability.lean:83:29: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+'Waffle.Stability.defect_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Stability.relative_bound_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Stability.global_relative_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

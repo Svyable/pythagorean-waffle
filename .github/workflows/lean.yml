@@ -24,4 +24,28 @@ jobs:
           lake env lean Waffle/Geometry.lean | tee -a axiom-audit.txt
           lake env lean Waffle/Similarity.lean | tee -a axiom-audit.txt
           lake env lean Waffle/Characterization.lean | tee -a axiom-audit.txt
+          lake env lean Waffle/Stability.lean | tee -a axiom-audit.txt
           ! grep -E 'sorryAx|declaration uses .sorry.' axiom-audit.txt
+      - name: Build evidence-linked publication
+        run: python3 publication/build.py --audit axiom-audit.txt --commit "$GITHUB_SHA" --out site
+      - name: Upload verified paper
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+  publish:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+    steps:
+      - name: Deploy verified paper
+        id: deployment
+        uses: actions/deploy-pages@v4
