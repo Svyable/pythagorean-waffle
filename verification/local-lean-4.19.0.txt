@@ -1,0 +1,11 @@
+Lean (version 4.19.0, arm64-apple-darwin23.6.0, commit 6caaee842e94, Release)
+'Waffle.finite_cone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.closed_scales' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.intersection_fixed_points' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.missing_reflection_countermodel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.missing_transfer_countermodel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.finite_pythagoras' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.fixed_point_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.truncation_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.ratio_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.equal_legs' depends on axioms: [propext, Classical.choice, Quot.sound]

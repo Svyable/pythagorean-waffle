@@ -4,6 +4,8 @@ Research into machine-checked trigonometric proofs of the Pythagorean theorem, i
 
 ## Status
 
+**Locally kernel-checked on Lean 4.19.0 (2026-11-25).** See the [verification transcript](verification/local-lean-4.19.0.txt). The ten audited statements depend only on propext, Classical.choice and Quot.sound. This certifies the conditional algebraic core, not the synthetic geometry or archived prototype.
+
 - `Waffle.lean`: finite affine intersection certificate, conditional Pythagorean derivation, fixed-point uniqueness and exact finite truncation error over arbitrary fields. Geometry assumptions are explicit.
 - `archive/JacksonJohnson.lean`: original 460-line prototype, preserved as an **unverified archive**, not part of the default build. Its global similarity axiom itself implies Pythagoras; do not use it to certify foundational independence.
 - Synthetic derivation of the sine transfer, reflected-triangle sine law, and angle/length semantics remains open.

@@ -66,14 +66,14 @@ theorem fixed_point_unique (d r x y : K) (hr : 1-r ≠ 0)
   exact sub_eq_zero.mp ((mul_eq_zero.mp h).resolve_left hr)
 
 /-- The n-step truncation of a stationary recurrence. -/
-def partial (x r : K) (n : ℕ) : K := x*(1-r^n)
+def truncated (x r : K) (n : ℕ) : K := x*(1-r^n)
 
-theorem partial_zero (x r : K) : partial x r 0 = 0 := by
-  simp [partial]
+theorem partial_zero (x r : K) : truncated x r 0 = 0 := by
+  simp [truncated]
 
 theorem partial_succ (d x r : K) (n : ℕ) (hx : x = d+r*x) :
-    partial x r (n+1) = d+r*partial x r n := by
-  unfold partial
+    truncated x r (n+1) = d+r*truncated x r n := by
+  unfold truncated
   rw [pow_succ]
   linear_combination hx
 
@@ -81,16 +81,16 @@ theorem partial_succ (d x r : K) (n : ℕ) (hx : x = d+r*x) :
 theorem truncation_defect (a b u v r : K) (n : ℕ)
     (hx : u*b - v*a = 2*a)
     (hy : u*a = v*b) :
-    (a^2+b^2)*partial u r n - 2*a*b*(1+partial v r n) =
+    (a^2+b^2)*truncated u r n - 2*a*b*(1+truncated v r n) =
       -(2*a*b)*r^n := by
   have hf := finite_cone a b u v hx hy
-  unfold partial
+  unfold truncated
   linear_combination (1-r^n)*hf
 
 /-- Exact numerator of the error in the cone sine ratio. -/
 theorem ratio_defect (u v r : K) (n : ℕ) :
-    u*(1+partial v r n) - partial u r n*(1+v) = u*r^n := by
-  unfold partial
+    u*(1+truncated v r n) - truncated u r n*(1+v) = u*r^n := by
+  unfold truncated
   ring
 
 /-- A separate equal-leg case, with sine of the right angle equal to one. -/
@@ -109,7 +109,7 @@ theorem intersection_fixed_points (a b u v : K) (hb : b ≠ 0)
   obtain ⟨hu, hv⟩ := intersection_scales a b u v hx hy
   constructor
   · field_simp [hb]
-    linear_combination hu
+    linear_combination b * hu
   · field_simp [hb]
     linear_combination hv
 
