@@ -33,7 +33,7 @@ theorem finite_pythagoras (a b c u v s : K)
     a^2+b^2 = c^2 := by
   have hf := finite_cone a b u v hx hy
   have h : (s*(1+v)) * (a^2+b^2-c^2) = 0 := by
-    linear_combination -hf - (a^2+b^2)*hcone + (1+v)*hsine
+    linear_combination hf + (a^2+b^2)*hcone - (1+v)*hsine
   have hz := (mul_eq_zero.mp h).resolve_left hnz
   exact sub_eq_zero.mp hz
 
