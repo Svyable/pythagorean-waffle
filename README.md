@@ -33,6 +33,9 @@ The normalized ratio defect has numerator u rⁿ. These certificates apply for e
 
 - Quantitative stability: exact projection defect, relative squared-length tolerance and global extension are locally verified in Waffle/Stability.lean.
 
+- Finite sampling: under the triangle inequality and mesh coverage, finite absolute squared-length error gives global relative error at most ε+6δ. See Waffle/Sampling.lean.
+- Infinite chain: initial vertices, affine right-angle steps, boundary lengths and convergent boundary sums verified in Waffle/Chain.lean.
+
 ## Build
 
 ```sh

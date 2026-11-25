@@ -68,5 +68,26 @@
     "module": "Waffle/Stability.lean",
     "theorem": "Waffle.Stability.global_relative_bound",
     "scope": "BasicLength. Nonnegative tolerance; uniform hypothesis at every positive slope."
+  },
+  {
+    "id": "C11",
+    "title": "Finite-sample global stability",
+    "module": "Waffle/Sampling.lean",
+    "theorem": "Waffle.Sampling.finite_sample_global",
+    "scope": "BasicLength plus triangle inequality, nonnegative tolerance and mesh, finite covering of [0,1], bounded absolute squared-length error at all sample slopes."
+  },
+  {
+    "id": "C12",
+    "title": "Right-angle shrinking chain",
+    "module": "Waffle/Chain.lean",
+    "theorem": "Waffle.Chain.right_zigzag",
+    "scope": "Positive ordered legs; affine quarter-turn perpendicularity."
+  },
+  {
+    "id": "C13",
+    "title": "Infinite boundary length sums",
+    "module": "Waffle/Chain.lean",
+    "theorem": "Waffle.Chain.boundary_sums",
+    "scope": "BasicLength, positive ordered legs; no area or AA assumption."
   }
 ]

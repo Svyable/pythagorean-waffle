@@ -25,6 +25,8 @@ jobs:
           lake env lean Waffle/Similarity.lean | tee -a axiom-audit.txt
           lake env lean Waffle/Characterization.lean | tee -a axiom-audit.txt
           lake env lean Waffle/Stability.lean | tee -a axiom-audit.txt
+          lake env lean Waffle/Sampling.lean | tee -a axiom-audit.txt
+          lake env lean Waffle/Chain.lean | tee -a axiom-audit.txt
           ! grep -E 'sorryAx|declaration uses .sorry.' axiom-audit.txt
       - name: Build evidence-linked publication
         run: python3 publication/build.py --audit axiom-audit.txt --commit "$GITHUB_SHA" --out site
