@@ -1,0 +1,18 @@
+Lean (version 4.19.0, arm64-apple-darwin23.6.0, commit 6caaee842e94, Release)
+Waffle/Sampling.lean:24:38: warning: 'ring' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+Waffle/Sampling.lean:26:38: warning: 'ring' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+Waffle/Sampling.lean:24:38: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+Waffle/Sampling.lean:26:38: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+Waffle/Sampling.lean:97:24: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Waffle/Sampling.lean:103:25: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'Waffle.Sampling.slope_lipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Sampling.error_lipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Sampling.finite_sample_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Sampling.reciprocal_relative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Sampling.finite_sample_global' depends on axioms: [propext, Classical.choice, Quot.sound]

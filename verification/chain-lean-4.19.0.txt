@@ -1,0 +1,14 @@
+Lean (version 4.19.0, arm64-apple-darwin23.6.0, commit 6caaee842e94, Release)
+Waffle/Chain.lean:34:41: warning: 'ring' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+Waffle/Chain.lean:34:41: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+Waffle/Chain.lean:56:31: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'Waffle.Chain.initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Chain.horizontal_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Chain.vertical_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Chain.right_zigzag' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Chain.boundary_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Chain.step_lengths' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Chain.boundary_sums' depends on axioms: [propext, Classical.choice, Quot.sound]
