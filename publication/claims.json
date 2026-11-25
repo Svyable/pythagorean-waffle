@@ -89,5 +89,19 @@
     "module": "Waffle/Chain.lean",
     "theorem": "Waffle.Chain.boundary_sums",
     "scope": "BasicLength, positive ordered legs; no area or AA assumption."
+  },
+  {
+    "id": "C14",
+    "title": "Convergence to the finite apex",
+    "module": "Waffle/Chain.lean",
+    "theorem": "Waffle.Chain.apex_limit",
+    "scope": "Positive ordered legs; convergence in the ordinary real coordinate topology."
+  },
+  {
+    "id": "C15",
+    "title": "Infinite sums equal actual boundary lengths",
+    "module": "Waffle/Chain.lean",
+    "theorem": "Waffle.Chain.sums_equal_apex_lengths",
+    "scope": "BasicLength; positive ordered legs; no AA or area premise."
   }
 ]

@@ -138,6 +138,38 @@ theorem boundary_sums (G : BasicLength) (a b : ℝ) (ha : 0 < a) (hab : a < b) :
     funext n
     exact (step_lengths G a b ha hab n).2
 
+/-- Both boundary point sequences converge to the finite apex. -/
+theorem apex_limit (a b : ℝ) (ha : 0 < a) (hab : a < b) :
+    Filter.Tendsto (YN a b) Filter.atTop (nhds (X a b)) ∧
+    Filter.Tendsto (ZN a b) Filter.atTop (nhds (X a b)) := by
+  obtain ⟨hr,hr1⟩ := ratio_bounds a b ha hab
+  have hp := tendsto_pow_atTop_nhds_zero_of_lt_one hr.le hr1
+  have hmul (k l : ℝ) : Filter.Tendsto
+      (fun n : ℕ => k*ratio a b^n*l) Filter.atTop (nhds 0) := by
+    simpa using (tendsto_const_nhds.mul hp).mul
+      (tendsto_const_nhds : Filter.Tendsto (fun _ : ℕ => l) Filter.atTop (nhds l))
+  have hf (c k l : ℝ) : Filter.Tendsto
+      (fun n : ℕ => c+k*ratio a b^n*l) Filter.atTop (nhds c) := by
+    simpa using (tendsto_const_nhds : Filter.Tendsto (fun _ : ℕ => c) Filter.atTop (nhds c)).add (hmul k l)
+  constructor
+  · exact (hf (X a b).1 (U a b) b).prodMk_nhds (hf (X a b).2 (U a b) a)
+  · exact (hf (X a b).1 (V a b) a).prodMk_nhds (hf (X a b).2 (V a b) b)
+
+/-- The infinite boundary sums are the actual lengths of the
+finite boundary displacements, not just matching coefficients. -/
+theorem sums_equal_apex_lengths (G : BasicLength) (a b : ℝ) (ha : 0 < a) (hab : a < b) :
+    HasSum (fun n : ℕ => G.len (sub (YN a b n) (YN a b (n+1)))) (G.len (sub (Y a) (X a b))) ∧
+    HasSum (fun n : ℕ => G.len (sub (ZN a b n) (ZN a b (n+1)))) (G.len (sub (Z a) (X a b))) := by
+  obtain ⟨hu,hv,_,_⟩ := scales a b ha hab
+  obtain ⟨hz,hy,_⟩ := apex_geometry a b ha hab
+  have hz' : sub (Z a) (X a b) = scale (V a b) (a,b) := by
+    have h : sub (Z a) (X a b) = scale (-1) (sub (X a b) (Z a)) := by
+      apply Prod.ext <;> simp [sub,scale]
+    rw [h,hz]
+    apply Prod.ext <;> simp [scale]
+  rw [hy,hz',G.homogeneous,G.homogeneous,G.swap a b,abs_of_pos hu,abs_of_pos hv]
+  exact boundary_sums G a b ha hab
+
 #print axioms initial
 #print axioms horizontal_step
 #print axioms vertical_step
@@ -145,4 +177,6 @@ theorem boundary_sums (G : BasicLength) (a b : ℝ) (ha : 0 < a) (hab : a < b) :
 #print axioms boundary_steps
 #print axioms step_lengths
 #print axioms boundary_sums
+#print axioms apex_limit
+#print axioms sums_equal_apex_lengths
 end Waffle.Chain

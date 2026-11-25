@@ -12,3 +12,5 @@ note: this linter can be disabled with `set_option linter.unnecessarySeqFocus fa
 'Waffle.Chain.boundary_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Waffle.Chain.step_lengths' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Waffle.Chain.boundary_sums' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Chain.apex_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Chain.sums_equal_apex_lengths' depends on axioms: [propext, Classical.choice, Quot.sound]
