@@ -23,6 +23,8 @@ For r=(a/b)² and u_n=u(1-rⁿ), v_n=v(1-rⁿ), the exact cross-multiplied trunc
 (a²+b²)u_n - 2ab(1+v_n) = -2ab rⁿ.
 The normalized ratio defect has numerator u rⁿ. These certificates apply for every finite n and need no analytic limit or ordered field.
 
+- [Area-free similarity bridge](SIMILARITY.md): the finite cone follows from local AA right-triangle similarity and elementary length rules, without an area function. All five audited statements pass locally, including a taxicab counterexample. Synthetic derivation of AA remains open.
+
 ## Build
 
 ```sh

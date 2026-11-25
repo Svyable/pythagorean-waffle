@@ -1,0 +1,16 @@
+Lean (version 4.19.0, arm64-apple-darwin23.6.0, commit 6caaee842e94, Release)
+Waffle/Similarity.lean:65:46: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Waffle/Similarity.lean:74:42: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Waffle/Similarity.lean:120:31: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Waffle/Similarity.lean:148:48: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Waffle/Similarity.lean:152:44: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'Waffle.Similarity.taxicab_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Similarity.local_similarity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Similarity.strict_pythagoras' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Similarity.equal_pythagoras' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Waffle.Similarity.pythagoras' depends on axioms: [propext, Classical.choice, Quot.sound]
